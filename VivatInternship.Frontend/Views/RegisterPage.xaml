@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VivatInternship.Frontend.Views.RegisterPage"
+             Title="RegisterPage"
+             xmlns:vm="clr-namespace:VivatInternship.Frontend.ViewModels"
+             xmlns:local="clr-namespace:VivatInternship.Frontend"
+             Shell.FlyoutBehavior="Disabled"
+             xmlns:model="clr-namespace:VivatInternship.Frontend.Models">
+     <ContentPage.BindingContext>
+          <vm:RegisterViewModel/>
+     </ContentPage.BindingContext>
+
+     <VerticalStackLayout Spacing="15"
+                          Padding="40,80"
+                          VerticalOptions="Center"
+                          BackgroundColor="FloralWhite">
+          <Image Source="shopping_cart.png"
+                 HeightRequest="130"
+                 HorizontalOptions="Center" />
+          <VerticalStackLayout Spacing="8">
+
+               <Label Text="Username"
+                      FontSize="16"
+                      TextColor="Black"
+                      HorizontalOptions="Center"/>
+               <Entry Text="{Binding RegisterModel.Username, Mode=OneWayToSource}"
+                      MaxLength="15"
+                      CursorPosition="5"
+                      ClearButtonVisibility="WhileEditing"
+                      Keyboard="Plain"
+                      BackgroundColor="Black"
+                      WidthRequest="300"
+                      HeightRequest="40"
+                      TextColor="White"/>
+
+               <Label Text="Password"
+                      TextColor="Black"
+                      FontSize="16"
+                      HorizontalOptions="Center"/>
+               <Entry 
+                    Text="{Binding RegisterModel.Password, Mode=OneWayToSource}"
+                    IsPassword="True"
+                    CursorPosition="5"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Plain"
+                    TextColor="White"
+                    WidthRequest="300"
+                    HeightRequest="40"
+                    BackgroundColor="Black"/>
+
+               <Label
+                Text="Confirm Password"
+                TextColor="Black"
+                FontSize="16"
+                    HorizontalOptions="Center"/>
+
+               <Entry 
+                    Text="{Binding RegisterModel.ConfirmedPassword, Mode=OneWayToSource}"
+                    IsPassword="True"
+                    CursorPosition="5"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Plain"
+                    TextColor="White"
+                    WidthRequest="300"
+                    HeightRequest="40"
+                    BackgroundColor="Black"/>
+
+               <Button Command="{Binding RegisterCommand}"
+                       CornerRadius="10"
+                       FontSize="16"
+                       Text="Sign Up"
+                       HorizontalOptions="Center"
+                       TextColor="White"
+                       BackgroundColor="Black"
+                       HeightRequest="40"/>
+          </VerticalStackLayout>
+     </VerticalStackLayout>
+</ContentPage>

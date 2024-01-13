@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VivatInternship.Frontend.Views.MyCartPage"
+             Title="MyCartPage"
+             xmlns:viewmodel="clr-namespace:VivatInternship.Frontend.ViewModels"
+             xmlns:model="clr-namespace:VivatInternship.Frontend.Models"
+             xmlns:local="clr-namespace:VivatInternship.Frontend.Clients"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasBackButton ="False">
+    <ContentPage.BindingContext>
+        <viewmodel:MyCartViewModel/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout BackgroundColor="FloralWhite"
+                         Spacing="30"
+                         Padding="20, 40">
+        <Image Source="shopping_bag.png"
+                 WidthRequest="100"
+                 HeightRequest="100"
+                 HorizontalOptions="Center"/>
+
+        <CollectionView
+               ItemsSource="{x:Static local:DataStoreService.CartList }">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout Padding="10" HorizontalOptions="CenterAndExpand">
+                        <Image Source="product.png" WidthRequest="50" HeightRequest="50" Aspect="AspectFill" />
+                        <VerticalStackLayout Padding="10,0,0,0" WidthRequest="500" HorizontalOptions="CenterAndExpand">
+                            <Label Text="{Binding Name}" FontAttributes="Bold" TextColor="Black" />
+                            <Label Text="{Binding Price}" TextColor="Black"/>
+                        </VerticalStackLayout>
+                        <Button x:Name="Remove" Text="Remove" Command="{Binding Source ={ RelativeSource 
+			 AncestorType={x:Type viewmodel:MyCartViewModel}}, 
+			Path= RemoveItemCommand}"
+                    CommandParameter="{Binding Name}" HorizontalOptions="EndAndExpand" />
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

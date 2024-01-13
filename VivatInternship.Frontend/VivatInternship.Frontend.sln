@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31611.283
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VivatInternship.Frontend", "VivatInternship.Frontend.csproj", "{B4A4AD28-88D0-4288-B101-80C0D6847A09}"
+	ProjectSection(ProjectDependencies) = postProject
+		{10FAD16C-6EAD-47CF-ACDD-0D9741DE1AE2} = {10FAD16C-6EAD-47CF-ACDD-0D9741DE1AE2}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VivatInternship.Backend", "..\..\VivatInternship.Backend\VivatInternship.Backend.csproj", "{10FAD16C-6EAD-47CF-ACDD-0D9741DE1AE2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4A4AD28-88D0-4288-B101-80C0D6847A09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4A4AD28-88D0-4288-B101-80C0D6847A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4A4AD28-88D0-4288-B101-80C0D6847A09}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B4A4AD28-88D0-4288-B101-80C0D6847A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4A4AD28-88D0-4288-B101-80C0D6847A09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4A4AD28-88D0-4288-B101-80C0D6847A09}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{10FAD16C-6EAD-47CF-ACDD-0D9741DE1AE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10FAD16C-6EAD-47CF-ACDD-0D9741DE1AE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10FAD16C-6EAD-47CF-ACDD-0D9741DE1AE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10FAD16C-6EAD-47CF-ACDD-0D9741DE1AE2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VivatInternship.Frontend.Views.ScannerPage"
+             Title="ScannerPage"
+             xmlns:viewmodel="clr-namespace:VivatInternship.Frontend.ViewModels"
+             x:DataType="viewmodel:ScannerViewModel">
+
+    <VerticalStackLayout BackgroundColor="FloralWhite"
+                         Spacing="30"
+                         Padding="20, 20">
+
+        <Button
+                x:Name="ImageSelect"
+                Text="Select Barcode"
+                SemanticProperties.Hint="Select Image"
+                Clicked="SelectBarcode"
+                HorizontalOptions="Center"/>
+
+        <Image
+                x:Name="barcodeImage"
+                SemanticProperties.Description="Selected Barcode"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+        
+        <Editor x:Name="outputText"
+                Placeholder="Output text"
+                HeightRequest="50"
+                WidthRequest="500"
+                       BackgroundColor="Black"
+                       TextColor="FloralWhite"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       FontSize="16"/>
+        <Button
+                x:Name="copyText"
+                Text="Copy"
+                    FontSize="16"
+                SemanticProperties.Hint="Copy Text"
+                HeightRequest="40"
+                WidthRequest="300"
+                Clicked="CopyEditorText"
+                HorizontalOptions="Center"
+                    TextTransform="Uppercase"
+                    BackgroundColor="Black"
+                       TextColor="FloralWhite"/>
+
+        <Button CornerRadius="10"
+                  FontSize="16"
+                  Text="Go to your cart"
+                  HorizontalOptions="Center"
+                  TextColor="White"
+                  BackgroundColor="Black"
+                  HeightRequest="40"
+                  WidthRequest="300"
+                  TextTransform="Uppercase"
+                  Command="{Binding MyCartNavigationCommand}"/>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VivatInternship.Frontend.MainPage"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False"
+             xmlns:handlers="clr-namespace:VivatInternship.Frontend.Handlers"
+             xmlns:viewmodel="clr-namespace:VivatInternship.Frontend.ViewModels"
+             x:DataType="viewmodel:MainPageViewModel">
+
+
+    <StackLayout Spacing="20"
+                  Padding="40,40"
+                  VerticalOptions="Center"
+                  BackgroundColor="FloralWhite">
+
+        <Label Text="Scan me!"
+                 FontAttributes="Bold"
+                 FontSize="40"
+                 HorizontalOptions="Center" 
+                 TextColor="Black"/>
+
+        <Image Source="take_away.png"
+                 HeightRequest="130"
+                 HorizontalOptions="Center" />
+
+        <StackLayout Spacing="8">
+            <Label Text="Username"
+                      FontSize="16"
+                      TextColor="Black"
+                      HorizontalOptions="Center"/>
+
+            <Entry Text="{Binding Username, Mode=OneWayToSource}"
+                    MaxLength="15"
+                    CursorPosition="5"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Plain"
+                    BackgroundColor="Black"
+                    WidthRequest="300"
+                    HeightRequest="40"
+                    TextColor="White"/>
+
+            <Label Text="Password"
+                      TextColor="Black"
+                      FontSize="16"
+                      HorizontalOptions="Center"/>
+
+            <Entry 
+                    Text="{Binding Password, Mode=OneWayToSource}"
+                    IsPassword="True"
+                    CursorPosition="5"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Plain"
+                    TextColor="White"
+                    WidthRequest="300"
+                    HeightRequest="40"
+                    BackgroundColor="Black"/>
+
+            <Button x:Name="SignIn"
+                       Command="{Binding LoginCommand}"
+                       CornerRadius="10"
+                       FontSize="16"
+                       Text="Sign In"
+                       HorizontalOptions="Center"
+                       TextColor="White"
+                       BackgroundColor="Black"
+                       HeightRequest="40"/>
+
+        </StackLayout>
+        <StackLayout Spacing="8">
+            <Label Text="Don't have an account?"
+                      TextColor="Black"
+                      FontSize="16"
+                      HorizontalOptions="Center"/>
+            <Button x:Name="SignUp"
+                       Command="{Binding RegisterNavigationCommand}"
+                       CornerRadius="10"
+                       FontSize="16"
+                       Text="Sign Up"
+                       HorizontalOptions="Center"
+                       TextColor="White"
+                       BackgroundColor="Black"
+                       HeightRequest="40"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

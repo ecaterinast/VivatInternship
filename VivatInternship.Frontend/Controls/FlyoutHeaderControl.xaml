@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout Padding = "0"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VivatInternship.Frontend.Controls.FlyoutHeaderControl">
+     <Border BackgroundColor="FloralWhite" Stroke="FloralWhite">
+          <Grid ColumnDefinitions="Auto, *"
+                     Padding="10">
+               <Image Grid.Column="0"
+                      Grid.Row="0"
+                           Source="take_away.png"
+                           Aspect="AspectFill"
+                           WidthRequest="40"
+                           HeightRequest="40"
+                           HorizontalOptions="Center"/>
+               <Label Text="Scanner SuperApp"
+                           FontSize="20"
+                           Grid.Column="1"
+                      Grid.Row="0"
+                           TextColor="Black"
+                           HorizontalOptions="Center"
+                           FontAttributes="Bold"/>
+          </Grid>
+     </Border>
+     <Grid>
+          <Label Text="Hello, " FontSize="14" TextColor="Black" BackgroundColor ="White" Padding="10" FontAttributes="Bold" Grid.Column="0"/>
+          <Label x:Name="lblUsername" FontSize="14" TextColor="Black" BackgroundColor="White" Padding="10" FontAttributes="Bold" Grid.Column="1"/>
+     </Grid>
+
+</StackLayout>
